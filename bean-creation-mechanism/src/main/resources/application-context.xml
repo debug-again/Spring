@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- By Constructor -->
+	<bean id="sampleBeanCons" class= "demo.practice.spring.SampleBean" />
+	<bean id="sampleBeanConsArg" class="demo.practice.spring.SampleBean" >
+		<constructor-arg value="This is sample Bean" />
+	</bean>	
+	
+	<!-- By Instance factory -->
+	<bean id="sampleBeanFactory" class="demo.practice.spring.SampleBeanFactory" />
+	<bean id="sampleBeanFromInstanceFactory" factory-bean="sampleBeanFactory" factory-method="getSampleBean" />
+	<bean id="sampleBeanFromInstanceFactoryArg" factory-bean="sampleBeanFactory" factory-method="getSampleBean">
+		<constructor-arg value="This is sample Bean from Instance factory" />
+	</bean>	
+	
+	<!-- By Static Instance factory -->
+	<bean id="staticSampleBeanFactory" class="demo.practice.spring.StaticSampleBeanFactory" factory-method="getSampleBean"/>
+	<bean id="staticSampleBeanFactoryArg" class="demo.practice.spring.StaticSampleBeanFactory" factory-method="getSampleBean">
+		<constructor-arg value="This is sample Bean from Static Instance factory" />
+	</bean>	
+	
+</beans>
