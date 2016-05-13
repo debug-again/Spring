@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="beanA" class="demo.practice.spring.BeanA" lazy-init="true">
+		<constructor-arg ref="beanB" />
+	</bean>
+	
+	<!-- <bean name="beanB" class="demo.practice.spring.BeanB" />	 -->
+	
+	<!-- 
+		Lazy init by default is false, only when it is true it wont check for dependencies, 
+		it will check only definitions, and will give error once used, if true it will instantiate it,
+		and cache it.
+	 -->
+
+</beans>
